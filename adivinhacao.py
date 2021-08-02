@@ -11,6 +11,8 @@ pontos = 1000
 print("Qual nível de dificuldade ??")
 print("(1)Fácil (2)Médio (3)Difícil")
 
+print(3//2)
+
 nivel = int(input("Digite o Nível.: "))
 
 if (nivel == 1):
