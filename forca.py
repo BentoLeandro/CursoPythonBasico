@@ -1,9 +1,10 @@
 import random
 import os
+import desenhos
 
 def msg_abertura():
     print("**********************************")
-    print("***Bem vindo ao Jogo da Forca..***")
+    print("***Bem-vindo ao Jogo da Forca..***")
     print("**********************************")
 
 def carrega_palavra_secreta():
@@ -36,94 +37,15 @@ def imprime_msg_acerto(palavra_secreta):
     print("="*40)
     print("Parabéns... Você ACERTOU a Palavra... 0/")
     print(f"Palavra secreta.: {palavra_secreta}")
-    print("       ___________      ")
-    print("      '._==_==_=_.'     ")
-    print("      .-\\:      /-.    ")
-    print("     | (|:.     |) |    ")
-    print("      '-|:.     |-'     ")
-    print("        \\::.    /      ")
-    print("         '::. .'        ")
-    print("           ) (          ")
-    print("         _.' '._        ")
-    print("        '-------'       ")
+    desenhos.imprime_desenho_acerto()
     print("="*40)
 
 
 def imprime_msg_erro(palavra_secreta):
     print("="*33)    
-    print("    _______________       ")
-    print("   /               \      ")
-    print("  /                 \     ")
-    print("//                   \/\  ")
-    print("\|   XXXX     XXXX   | /  ")
-    print(" |   XXXX     XXXX   |/   ")
-    print(" |   XXX       XXX   |   Que Pena.. Você foi ENFORCADO...  ")
-    print(" |                   |   Atingiu os 7 erros... ")
-    print(f" \__      XXX      __/   A Palavra SECRETA era.: {palavra_secreta} ")
-    print("   |\     XXX     /|      ")
-    print("   | |           | |      ")
-    print("   | I I I I I I I |      ")
-    print("   |  I I I I I I  |      ")
-    print("   \_             _/      ")
-    print("     \_         _/        ")
-    print("       \_______/          ")
+    desenhos.imprime_desenho_erro(palavra_secreta)
     print("="*33)
 
-def desenha_forca(erros):
-    print("  _______     ")
-    print(" |/      |    ")
-
-    if(erros == 0):
-        print(" | ")
-        print(" | ")
-        print(" | ")
-        print(" | ")
-
-    if(erros == 1):
-        print(" |      (_)   ")
-        print(" |            ")
-        print(" |            ")
-        print(" |            ")
-
-    if(erros == 2):
-        print(" |      (_)   ")
-        print(" |      \     ")
-        print(" |            ")
-        print(" |            ")
-
-    if(erros == 3):
-        print(" |      (_)   ")
-        print(" |      \|    ")
-        print(" |            ")
-        print(" |            ")
-
-    if(erros == 4):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |            ")
-        print(" |            ")
-
-    if(erros == 5):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |       |    ")
-        print(" |            ")
-
-    if(erros == 6):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |       |    ")
-        print(" |      /     ")
-
-    if (erros == 7):
-        print(" |      (_)   ")
-        print(" |      \|/   ")
-        print(" |       |    ")
-        print(" |      / \   ")
-
-    print(" |            ")
-    print("_|___         ")
-    print()    
 
 def jogar():
     os.system('cls')
@@ -137,7 +59,7 @@ def jogar():
     
     while(not enforcou and not acertou):
         msg_abertura()
-        desenha_forca(erros)
+        desenhos.imprime_desenho_forca(erros)
         print(f"Erros {erros} de 7")     
         print(letras_acertadas)   
         chute = busca_chute()

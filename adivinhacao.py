@@ -2,7 +2,7 @@ import random
 
 def jogar():
     print("**********************************")
-    print("Bem vindo ao Jogo de Adivinhação..")
+    print("Bem-vindo ao Jogo de Adivinhação..")
     print("**********************************")
 
     numero_secreto = random.randrange(1, 101) #round(random.random() * 100)
