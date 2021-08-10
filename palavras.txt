@@ -1,4 +1,9 @@
 banana
-maçã
 melancia
 laranja
+goiaba
+morango
+pera
+uva
+
+
