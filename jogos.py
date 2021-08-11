@@ -31,7 +31,8 @@ def escolher_jogo():
             print("S - Jogar o mesmo Jogo") 
             print("E - Escolher outro Jogo")
             print("N - Sair")
-            opcao = input("Digite o que deseja fazer.: ").upper()
+            opcao = input("Digite o que deseja fazer.: ")
+            opcao = opcao.upper()
             print("****************************************")    
 
             opcao_valida = True

@@ -2,10 +2,11 @@ import random
 import os
 import desenhos
 
-def msg_abertura():
-    print("**********************************")
+def msg_abertura(qtde_letras):
+    print("***********************************************************")
     print("***Bem-vindo ao Jogo da Forca..***")
-    print("**********************************")
+    print(f"A palavra secreta é uma Fruta com {qtde_letras} letras ")
+    print("***********************************************************")
 
 def carrega_palavra_secreta():
     palavras = []
@@ -13,7 +14,6 @@ def carrega_palavra_secreta():
         for linha in arquivo:
             linha = linha.strip()
             palavras.append(linha)
-    
 
     numero = random.randrange(0, len(palavras))
     return palavras[numero].upper()
@@ -51,14 +51,15 @@ def jogar():
     os.system('cls')
     palavra_secreta = carrega_palavra_secreta()
  
-    letras_acertadas = ["_" for letra in palavra_secreta]    
+    letras_acertadas = ["_" for letra in palavra_secreta] 
+    qtde_letras = len(palavra_secreta)   
 
     enforcou = False
     acertou = False
     erros = 0
     
     while(not enforcou and not acertou):
-        msg_abertura()
+        msg_abertura(qtde_letras)
         desenhos.imprime_desenho_forca(erros)
         print(f"Erros {erros} de 7")     
         print(letras_acertadas)   
