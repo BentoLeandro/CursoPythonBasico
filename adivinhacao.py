@@ -84,8 +84,9 @@ def jogar():
     else:
         print("Que pena acabaram suas Tentativas...")
         print(f"O Número secreto era.: {numero_secreto}")
-        print(f"Sua pontuação Final foi.: {pontos}")               
-        
+        #print(f"Sua pontuação Final foi.: {pontos}")               
+
+    print()    
     print("**********************************")
     print("********** FIM do Jogo************")
 

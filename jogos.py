@@ -48,7 +48,5 @@ def escolher_jogo():
                 print(f"Opção.: {opcao} é invalida!")
                 print("Digite uma das opções.: S - E - N")    
 
-
-
 if (__name__ == "__main__"):
     escolher_jogo()        
